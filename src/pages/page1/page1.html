@@ -4,115 +4,65 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="addPet()">
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="cards-bg">
-
-  <ion-card>
-
-    <img src="assets/img/c2.jpg"/>
-
+  <!--<h2>pet list</h2>
+ <ion-item *ngFor="let pet of pets | async">
+   <p>Nombre: {{pet.name}}</p>
+   <p>Edad: {{pet.age}}</p>
+ </ion-item>-->
+<ion-item *ngFor="let pet of pets | async">
+<ion-card>
+    <img src="assets/img/{{pet.name}}.jpg"/>
     <ion-card-content>
-      <ion-card-title>
-        Ariel
-      </ion-card-title>
-      <p>
-        Hembra || 1 Año || Persa
-      </p>
-    </ion-card-content>
-
+    <ion-card-title text-center>
+      {{pet.name}}
+    </ion-card-title>
     <ion-row no-padding>
       <ion-col>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name="add"></ion-icon>
-          Más Información
-        </button>
+        <p>{{pet.age}}</p>
       </ion-col>
       <ion-col text-center>
-        <button ion-button clear small color="danger" icon-left>
-        </button>
+        <p>{{pet.breed}} </p>
       </ion-col>
       <ion-col text-right>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
-          Compartir
-        </button>
+        <p style= "font-size: 20px">
+        <ion-icon name="{{pet.sex}}"></ion-icon>
+        </p>
       </ion-col>
     </ion-row>
-
-  </ion-card>
-
-  <ion-card>
-
-    <div>
-      <img src="assets/img/p3.jpg"/>
-    </div>
-
-    <ion-card-content>
-      <ion-card-title>
-        Jerry
-      </ion-card-title>
-      <p>
-        Macho || 1 Año || ????
-      </p>
-    </ion-card-content>
-
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name="add"></ion-icon>
+  </ion-card-content>
+  <ion-row no-padding>
+    <ion-col>
+      <button ion-button clear small icon-left (click)="changePage(pet)">
+        <ion-icon name="add"></ion-icon>
           Más Información
-        </button>
-      </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-left>
-        </button>
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col text-center>
+      <button ion-button clear small color="danger" icon-left>
+      </button>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button clear small icon-left>
+        <ion-icon name='share-alt'></ion-icon>
           Compartir
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
-  <ion-card>
-
-    <div>
-      <img src="assets/img/p2.jpg"/>
-    </div>
-
-    <ion-card-content>
-      <ion-card-title>
-        Principe
-      </ion-card-title>
-      <p>
-        Macho || 4 Años || ???
-      </p>
-    </ion-card-content>
-
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name="add"></ion-icon>
-          Más Información
-        </button>
-      </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-left>
-        </button>
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
-          Compartir
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+</ion-item>
 </ion-content>
+
+   <!--<h2>pet list</h2>
+  <ion-item *ngFor="let pet of pets | async">
+    <p>Nombre: {{pet.name}}</p>
+    <p>Edad: {{pet.age}}</p>
+  </ion-item>-->
