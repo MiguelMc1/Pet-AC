@@ -3,9 +3,32 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title align="center" ><img src="assets/img/MasAmor2.png"/></ion-title>
+    <ion-title align="center" ><img height="50" src="assets/img/MasAmor2.png"/></ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <br><h1 text-center>Reportes</h1>
+  <p text-center> Por favor llene los siguientes campos para poder atender tu reporte </p><br>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="E-Mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea type="text" placeholder="Reporte"></ion-textarea>
+    </ion-item>
+    </ion-list>
+    <button ion-button block (click)="done(reporte)">Enviar</button>
+
 </ion-content>

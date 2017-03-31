@@ -1,22 +1,13 @@
-page-page1 {
-  .barra{
-    max-height: 5%;
+.card-bg{
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+  ion-card-title{
+    font-size: 2.2rem;
 
   }
-  .toolbar {
-      display: flex;
-      overflow: hidden;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      width: 100%;
-      color: #179C7F;
+  img {
+    position: relative;
   }
-
 }

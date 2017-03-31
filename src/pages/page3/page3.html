@@ -3,19 +3,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title align="center" ><img src="assets/img/MasAmor2.png"/></ion-title>
+    <ion-title align="center" ><img height="50" src="assets/img/MasAmor2.png"/></ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
-
-
-
   <ion-card>
-
-
-
     <ion-card-content>
       <ion-card-title>
         <H1 align="center"><b>Información</b></H1>
@@ -26,20 +25,5 @@
         que quiera darle amor a algún animal a encontrar ese nuevo mejor amigo.
       </p>
     </ion-card-content>
-
   </ion-card>
-
-
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>
