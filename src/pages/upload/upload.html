@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <br><h1 text-center>Registro de Mascotas</h1>
+  <p text-center> Realice el siguente registro y de la manera más detallada posible. </p><br>
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating >Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="name" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Edad</ion-label>
+    <ion-input type="text" [(ngModel)]="age" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Género</ion-label>
+    <ion-select [(ngModel)]="sex">
+      <ion-option value="female" selected="true">Hembra</ion-option>
+      <ion-option value="male">Macho</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Raza</ion-label>
+    <ion-input type="text" [(ngModel)]="breed"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Información</ion-label>
+    <ion-input type="text" [(ngModel)]="info" ></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<button ion-button block (click)="done()">Enviar</button>
+
+</ion-content>

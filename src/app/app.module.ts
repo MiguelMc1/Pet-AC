@@ -6,8 +6,10 @@ import { Page2 } from '../pages/page2/page2';
 import { AngularFireModule } from 'angularfire2';
 import { DetailPage } from '../pages/detail/detail';
 import { AdoptPage } from '../pages/adopt/adopt';
+import { LoginPage } from '../pages/login/login';
+import { UploadPage } from '../pages/upload/upload';
 
-export const firebaseConfig = {
+var firebaseConfig = {
   apiKey: "AIzaSyCKq0Gz2ltLYc_RKJusJij2c0R2GaxU2y8",
   authDomain: "dm-pet.firebaseapp.com",
   databaseURL: "https://dm-pet.firebaseio.com",
@@ -21,7 +23,9 @@ export const firebaseConfig = {
     Page1,
     Page2,
     DetailPage,
-    AdoptPage
+    AdoptPage,
+    LoginPage,
+    UploadPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +37,9 @@ export const firebaseConfig = {
     Page1,
     Page2,
     DetailPage,
-    AdoptPage
+    AdoptPage,
+    LoginPage,
+    UploadPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
