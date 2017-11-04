@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>{{pet.name}}</ion-title>
+    <ion-title>{{donacion.articulo}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,26 +16,21 @@
 <ion-content class="card-background-page">
 
   <ion-card>
-    <img src="assets/img/{{pet.name}}.jpg"/>
+    <img src="assets/img/{{donacion.articulo}}.jpg"/>
     <ion-card-content>
       <ion-card-title text-center>
-        {{pet.name}}<br>
+        {{donacion.articulo}}<br>
       </ion-card-title>
-      <p>{{pet.info}}</p><br>
+      <p>{{donacion.info}}</p><br>
       <ion-row no-padding>
         <ion-col text-left>
-          <p>{{pet.age}}</p>
+          <p>{{donacion.animal}}</p>
         </ion-col>
         <ion-col text-center>
-          <p>{{pet.breed}} </p>
-        </ion-col>
-        <ion-col text-right>
-          <p style= "font-size: 20px">
-          <ion-icon name="{{pet.sex}}"></ion-icon>
-          </p>
+          <p>{{donacion.tam}} </p>
         </ion-col>
       </ion-row>
-      <button ion-button block (click)="adopt(pet)">Adopta a {{pet.name}}</button>
+      <button ion-button block (click)="aceptar(donacion)">Obten {{donacion.articulo}}</button>
     </ion-card-content>
   </ion-card>
 </ion-content>

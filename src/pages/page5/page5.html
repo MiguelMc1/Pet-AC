@@ -6,7 +6,7 @@
 
     <ion-title align="center" ><img height="50" src="assets/img/MasAmor2.png"/></ion-title>
     <ion-buttons end>
-    <button ion-button icon-only (click)="login()">
+    <button ion-button icon-only (click)="Donaciones(donacion)">
         <ion-icon name="add"></ion-icon>
     </button>
     </ion-buttons>
@@ -19,34 +19,32 @@
    <p>Nombre: {{pet.name}}</p>
    <p>Edad: {{pet.age}}</p>
  </ion-item>-->
-<ion-item *ngFor="let pet of pets | async">
+<ion-item *ngFor="let donacion of donaciones | async">
 <ion-card>
-    <img src="assets/img/{{pet.name}}.jpg"/>
+    <img src="assets/img/{{donacion.articulo}}.jpg"/>
     <ion-card-content>
     <ion-card-title text-center>
-      {{pet.name}}
+      {{donacion.articulo}}
     </ion-card-title>
     <ion-row no-padding>
       <ion-col>
-        <p>{{pet.age}}</p>
+        <p>{{donacion.animal}}</p>
       </ion-col>
       <ion-col text-center>
-        <p>{{pet.breed}} </p>
+        <p>{{donacion.tam}} </p>
       </ion-col>
-      <ion-col text-right>
-        <p style= "font-size: 20px">
-        <ion-icon name="{{pet.sex}}"></ion-icon>
-        </p>
-      </ion-col>
+
     </ion-row>
   </ion-card-content>
   <ion-row no-padding>
     <ion-col text-center>
-      <button ion-button clear small icon-left color="primary" (click)="changePage(pet)">
+      <button ion-button clear small color="primary" icon-left (click)="changePage(donacion)" >
         <ion-icon name="add"></ion-icon>
-          Información
+        Información
       </button>
     </ion-col>
+
+
     <!--
     <ion-col text-center>
       <button ion-button clear small color="danger" icon-left>
@@ -59,10 +57,15 @@
       </button>
     </ion-col>
   </ion-row>
+    -->
+
+
+    </ion-row>
+
 </ion-card>
 </ion-item>
 </ion-content>
--->
+
    <!--<h2>pet list</h2>
   <ion-item *ngFor="let pet of pets | async">
     <p>Nombre: {{pet.name}}</p>

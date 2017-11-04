@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title align="center" >Donación</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only >
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg" color="secondary">
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating >Nombre del articulo</ion-label>
+    <ion-input type="text" [(ngModel)]="articulo" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >¿Para que animal es?</ion-label>
+    <ion-input type="text" [(ngModel)]="animal" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Tamaño</ion-label>
+    <ion-input type="text" [(ngModel)]="tam" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Información</ion-label>
+    <ion-input type="text" [(ngModel)]="info" ></ion-input>
+  </ion-item>
+</ion-list>
+<button ion-button block (click)="done()">Enviar</button>
+
+</ion-content>
+  <!--<h2>pet list</h2>
+ <ion-item *ngFor="let pet of pets | async">
+   <p>Nombre: {{pet.name}}</p>
+   <p>Edad: {{pet.age}}</p>
+ </ion-item>-->
+
+
+
+   <!--<h2>pet list</h2>
+  <ion-item *ngFor="let pet of pets | async">
+    <p>Nombre: {{pet.name}}</p>
+    <p>Edad: {{pet.age}}</p>
+  </ion-item>-->

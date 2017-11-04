@@ -5,7 +5,10 @@ import { UploadPage } from '../pages/upload/upload';
 import * as firebase from 'firebase';
 
 import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
+import { Page3 } from '../pages/page3/page3';
+import { Page5 } from '../pages/page5/page5';
+import { Page6 } from '../pages/page6/page6';
+import { PostService0 } from '../../providers/post-service0';
 
 
 @Component({
@@ -14,13 +17,13 @@ import { Page2 } from '../pages/page2/page2';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any;
+  rootPage: any = Page1;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform) {
-    var config = {
-      apiKey: "AIzaSyCKq0Gz2ltLYc_RKJusJij2c0R2GaxU2y8",
+    /*var config = {
+      /apiKey: "AIzaSyCKq0Gz2ltLYc_RKJusJij2c0R2GaxU2y8",
       authDomain: "dm-pet.firebaseapp.com",
       databaseURL: "https://dm-pet.firebaseio.com",
       storageBucket: "dm-pet.appspot.com",
@@ -34,13 +37,15 @@ export class MyApp {
         } else {
 
             this.rootPage = Page1;
-        }
-    //this.initializeApp();
+        }*/
+    this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 }
+    { title: 'Inicio', component: Page1 },
+    { title: 'Donaciones', component: Page5 },
+    { title: 'Información', component: Page3 },
+    { title: 'Reportes', component: Page6 },
     ];
 
   }
