@@ -1,0 +1,41 @@
+<!--
+  Generated template for the PetDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{pet.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+
+  <ion-card>
+    <img src="assets/img/{{pet.name}}.jpg"/>
+    <ion-card-content>
+      <ion-card-title text-center>
+        {{pet.name}}<br>
+      </ion-card-title>
+      <p>{{pet.info}}</p><br>
+      <ion-row no-padding>
+        <ion-col text-left>
+          <p>{{pet.age}}</p>
+        </ion-col>
+        <ion-col text-center>
+          <p>{{pet.breed}} </p>
+        </ion-col>
+        <ion-col text-right>
+          <p style= "font-size: 20px">
+          <ion-icon name="{{pet.sex}}"></ion-icon>
+          </p>
+        </ion-col>
+      </ion-row>
+      <button ion-button block (click)="getPet(pet)">Adopta a {{pet.name}}</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

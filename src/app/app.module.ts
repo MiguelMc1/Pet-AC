@@ -1,18 +1,18 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { Page1 } from '../pages/page1/page1';
-import { Page3 } from '../pages/page3/page3';
-import { Page5 } from '../pages/page5/page5';
-import { Page6 } from '../pages/page6/page6';
 import { AngularFireModule } from 'angularfire2';
-import { DetailPage } from '../pages/detail/detail';
-import { Detail1Page } from '../pages/detail1/detail1';
-import { AdoptPage } from '../pages/adopt/adopt';
-import { AceptarPage } from '../pages/aceptar/aceptar';
-import { DonacionesPage } from '../pages/donaciones/donaciones';
+import { MyApp } from './app.component';
+import { Info } from '../pages/info/info';
+import { Alerts } from '../pages/alerts/alerts';
+import { PetFeed } from '../pages/petFeed/petFeed';
+import { DonationFeed } from '../pages/donationFeed/donationFeed';
+import { PetDetail } from '../pages/petDetail/petDetail';
+import { DonationDetail } from '../pages/donationDetail/donationDetail';
+import { GetPet } from '../pages/getPet/getPet';
+import { GetDonation } from '../pages/getDonation/getDonation';
+import { RegDonation } from '../pages/regDonation/regDonation';
+import { RegPet } from '../pages/regPet/regPet';
 import { LoginPage } from '../pages/login/login';
-import { UploadPage } from '../pages/upload/upload';
 import { PostService0 } from '../../providers/post-service0';
 
 var firebaseConfig = {
@@ -26,17 +26,17 @@ var firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
-    Page3,
-    Page5,
-    Page6,
-    DetailPage,
-    Detail1Page,
-    AceptarPage,
-    DonacionesPage,
-    AdoptPage,
+    PetFeed,
+    Info,
+    DonationFeed,
+    Alerts,
+    PetDetail,
+    DonationDetail,
+    GetDonation,
+    RegDonation,
+    GetPet,
     LoginPage,
-    UploadPage
+    RegPet
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -45,17 +45,17 @@ var firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Page1,
-    Page3,
-    Page5,
-    Page6,
-    DetailPage,
-    Detail1Page,
-    AceptarPage,
-    DonacionesPage,
-    AdoptPage,
+    PetFeed,
+    Info,
+    DonationFeed,
+    Alerts,
+    PetDetail,
+    DonationDetail,
+    GetDonation,
+    RegDonation,
+    GetPet,
     LoginPage,
-    UploadPage
+    RegPet
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, LoadingController, AlertController} from 'ionic-angular';
 import { UsersServices } from '../../providers/users-services';
-import { UploadPage } from '../upload/upload';
+import { RegPet } from '../regPet/regPet';
 
 @Component({
   selector: 'page-login',
@@ -27,7 +27,7 @@ export class LoginPage {
   signUserUp(){
     this.usersServices.signUpUser(this.email, this.password)
     .then(authData => {
-      this.navCtrl.setRoot(UploadPage);
+      this.navCtrl.setRoot(RegPet);
     }, error => {
       //alert("error");
     });
@@ -41,7 +41,7 @@ export class LoginPage {
   userLogin(){
     this.usersServices.loginUser(this.email, this.password)
     .then(auth => {
-      this.navCtrl.setRoot(UploadPage);
+      this.navCtrl.setRoot(RegPet);
     }, error => {
       let alert = this.alertCtrl.create({
         title: 'Error loggin in',

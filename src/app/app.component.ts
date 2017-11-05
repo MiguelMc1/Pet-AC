@@ -1,13 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { UploadPage } from '../pages/upload/upload';
+import { RegPet } from '../pages/regPet/regPet';
 import * as firebase from 'firebase';
 
-import { Page1 } from '../pages/page1/page1';
-import { Page3 } from '../pages/page3/page3';
-import { Page5 } from '../pages/page5/page5';
-import { Page6 } from '../pages/page6/page6';
+import { PetFeed } from '../pages/petFeed/petFeed';
+import { Info } from '../pages/info/info';
+import { DonationFeed } from '../pages/donationFeed/donationFeed';
+import { Alerts } from '../pages/alerts/alerts';
 import { PostService0 } from '../../providers/post-service0';
 
 
@@ -17,7 +17,7 @@ import { PostService0 } from '../../providers/post-service0';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = PetFeed;
 
   pages: Array<{title: string, component: any}>;
 
@@ -33,19 +33,19 @@ export class MyApp {
     var user = firebase.auth().currentUser;
 
         if (user) {
-            this.rootPage = UploadPage;
+            this.rootPage = RegPet;
         } else {
 
-            this.rootPage = Page1;
+            this.rootPage = PetFeed;
         }*/
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-    { title: 'Inicio', component: Page1 },
-    { title: 'Donaciones', component: Page5 },
-    { title: 'Información', component: Page3 },
-    { title: 'Reportes', component: Page6 },
+    { title: 'Inicio', component: PetFeed },
+    { title: 'Donaciones', component: DonationFeed },
+    { title: 'Información', component: Info },
+    { title: 'Reportes', component: Alerts },
     ];
 
   }
