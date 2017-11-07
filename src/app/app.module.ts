@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { MyApp } from './app.component';
+import { WelcomePage } from '../pages/welcome/welcome';
 import { Info } from '../pages/info/info';
 import { Alerts } from '../pages/alerts/alerts';
 import { PetFeed } from '../pages/petFeed/petFeed';
@@ -13,7 +14,6 @@ import { GetDonation } from '../pages/getDonation/getDonation';
 import { RegDonation } from '../pages/regDonation/regDonation';
 import { RegPet } from '../pages/regPet/regPet';
 import { LoginPage } from '../pages/login/login';
-import { PostService0 } from '../../providers/post-service0';
 
 var firebaseConfig = {
   apiKey: "AIzaSyCKq0Gz2ltLYc_RKJusJij2c0R2GaxU2y8",
@@ -26,6 +26,7 @@ var firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
+    WelcomePage,
     PetFeed,
     Info,
     DonationFeed,
@@ -45,6 +46,7 @@ var firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    WelcomePage,
     PetFeed,
     Info,
     DonationFeed,

@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { GooglePlus } from 'ionic-native';
 import { RegPet } from '../pages/regPet/regPet';
 import * as firebase from 'firebase';
 
+import { WelcomePage } from '../pages/welcome/welcome';
 import { PetFeed } from '../pages/petFeed/petFeed';
 import { Info } from '../pages/info/info';
 import { DonationFeed } from '../pages/donationFeed/donationFeed';
@@ -42,7 +44,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-    { title: 'Inicio', component: PetFeed },
+    { title: 'Mascotas', component: PetFeed },
     { title: 'Donaciones', component: DonationFeed },
     { title: 'Información', component: Info },
     { title: 'Reportes', component: Alerts },
