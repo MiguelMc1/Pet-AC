@@ -6,7 +6,7 @@
 
     <ion-title align="center" ><img height="50" (click)="login()" src="assets/img/MasAmor2.png"/></ion-title>
     <ion-buttons end>
-    <button ion-button icon-only (click)="filtro()">
+    <button ion-button icon-only (click)="filter($event)">
         <ion-icon name="funnel"></ion-icon>
     </button>
     </ion-buttons>
@@ -14,57 +14,44 @@
 </ion-header>
 
 <ion-content class="cards-bg" color="seco">
-  <!--<h2>pet list</h2>
- <ion-item *ngFor="let pet of pets | async">
-   <p>Nombre: {{pet.name}}</p>
-   <p>Edad: {{pet.age}}</p>
- </ion-item>-->
-<ion-item *ngFor="let pet of pets | async">
-<ion-card>
-    <img src="assets/img/{{pet.name}}.jpg"/>
-    <ion-card-content>
-    <ion-card-title text-center>
-      {{pet.name}}
-    </ion-card-title>
-    <ion-row no-padding>
-      <ion-col>
-        <p>{{pet.age}}</p>
-      </ion-col>
-      <ion-col text-center>
-        <p>{{pet.breed}} </p>
-      </ion-col>
-      <ion-col text-right>
-        <p style= "font-size: 20px">
-        <ion-icon name="{{pet.sex}}"></ion-icon>
-        </p>
-      </ion-col>
-    </ion-row>
-  </ion-card-content>
-  <ion-row no-padding>
-    <ion-col text-center>
-      <button ion-button clear small icon-left color="primary" (click)="changePage(pet)">
-        <ion-icon name="add"></ion-icon>
-          Información
-      </button>
-    </ion-col>
-    <!--
-    <ion-col text-center>
-      <button ion-button clear small color="danger" icon-left>
-      </button>
-    </ion-col>
-    <ion-col text-right>
-      <button ion-button clear small icon-left>
-        <ion-icon name='share-alt'></ion-icon>
-          Compartir
-      </button>
-    </ion-col>
-  </ion-row>
-</ion-card>
-</ion-item>
-</ion-content>
--->
-   <!--<h2>pet list</h2>
+  <ion-list>
+  <ion-item>
+    <ion-label>Filtrar</ion-label>
+    <ion-select [(ngModel)]="species" (ionChange)="pickSpecies(species)">
+      <ion-option value="cat">Gatos</ion-option>
+      <ion-option value="dog">Perros</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
   <ion-item *ngFor="let pet of pets | async">
-    <p>Nombre: {{pet.name}}</p>
-    <p>Edad: {{pet.age}}</p>
-  </ion-item>-->
+    <ion-card>
+        <img src="assets/img/{{pet.name}}.jpg"/>
+        <ion-card-content>
+        <ion-card-title text-center>
+          {{pet.name}}
+        </ion-card-title>
+        <ion-row no-padding>
+          <ion-col>
+            <p>{{pet.age}}</p>
+          </ion-col>
+          <ion-col text-center>
+            <p>{{pet.breed}} </p>
+          </ion-col>
+          <ion-col text-right>
+            <p style= "font-size: 20px">
+            <ion-icon name="{{pet.sex}}"></ion-icon>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear small icon-left color="primary" (click)="changePage(pet)">
+            <ion-icon name="add"></ion-icon>
+              Información
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-item>
+</ion-content>

@@ -1,10 +1,13 @@
-import { Component, Inject } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ViewController, NavController, AlertController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { FirebaseApp } from 'angularfire2';
 import { PetDetail } from '../petDetail/petDetail';
 import { RegPet } from '../regPet/regPet';
+import { PopoverPage } from '../popover/popover'
 import { LoginPage } from '../login/login';
+import { GetServiceProvider } from '../../providers/get-service';
 import * as firebase from 'firebase';
 
 @Component({
@@ -16,64 +19,25 @@ export class PetFeed {
   pets: FirebaseListObservable<any>;
   pages: Array<{title: string, component: any}>;
 
-
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
-    angFire: AngularFire, @Inject(FirebaseApp) firebase: any) {
+  constructor(public popoverCtrl: PopoverController, public navCtrl: NavController, public alertCtrl: AlertController,
+    public angFire: AngularFire, @Inject(FirebaseApp) firebase: any) {
     this.pets = angFire.database.list('/pets');
   }
 
-  done(){}
-
-  filtro(){}
-
-  addPet():void{
-    let prompt = this.alertCtrl.create({
-      title: 'Registro de Mascotas',
-      message: 'Ingrese la información',
-      inputs:[
-        {
-          name: 'name',
-          placeholder: "Nombre"
-        },
-        {
-          name: 'age',
-          placeholder: "Edad"
-        },
-        {
-          name: 'sex',
-          placeholder: "Género"
-        },
-        {
-          name: 'breed',
-          placeholder: "Raza"
-        },
-        {
-          name: 'info',
-          placeholder: "Descripción"
-        }
-      ],
-      buttons: [
-        {
-          text: "Cancelar",
-          handler: data => {
-            console.log("cancel cliked");
-          }
-        },
-        {
-          text: "Guardar",
-          handler: data => {
-            this.pets.push({
-              name: data.name,
-              age: data.age,
-              sex: data.sex,
-              breed: data.breed,
-              info: data.info
-            })
-          }
-        }
-      ]
+  pickSpecies(species: string){
+    this.pets = this.angFire.database.list('/pets', {
+      query: {
+        orderByChild: 'species',
+        equalTo: species
+      }
     });
-    prompt.present();
+  }
+
+  filter(e) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: e
+    });
   }
 
   changePage(pet){
