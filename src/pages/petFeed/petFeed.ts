@@ -24,6 +24,8 @@ export class PetFeed {
 
   done(){}
 
+  filtro(){}
+
   addPet():void{
     let prompt = this.alertCtrl.create({
       title: 'Registro de Mascotas',
