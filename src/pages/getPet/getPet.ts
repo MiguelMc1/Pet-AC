@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { MyApp } from '../../app/app.component';
+import { PetFeed } from '../pages/petFeed/petFeed';
+
+
 
 /*
   Generated class for the Adopt page.
@@ -23,6 +26,11 @@ export class GetPet {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GetPet');
+  }
+
+  changePage(feed){
+    this.navCtrl.push(MyApp, {
+    });
   }
 
   done(pet) {

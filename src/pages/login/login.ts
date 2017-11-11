@@ -41,7 +41,7 @@ export class LoginPage {
   userLogin(){
     this.usersServices.loginUser(this.email, this.password)
     .then(auth => {
-      this.navCtrl.setRoot(RegPet);
+      this.navCtrl.push(RegPet);
     }, error => {
       let alert = this.alertCtrl.create({
         title: 'Error loggin in',

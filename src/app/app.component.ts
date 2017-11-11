@@ -11,6 +11,7 @@ import { Info } from '../pages/info/info';
 import { DonationFeed } from '../pages/donationFeed/donationFeed';
 import { Alerts } from '../pages/alerts/alerts';
 import { PostService0 } from '../../providers/post-service0';
+import { PostService1 } from '../../providers/post-service1';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-    { title: 'Mascotas', component: PetFeed },
+    { title: 'Adopciones', component: PetFeed },
     { title: 'Donaciones', component: DonationFeed },
     { title: 'Información', component: Info },
     { title: 'Reportes', component: Alerts },
