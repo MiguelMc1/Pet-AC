@@ -1,11 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { GooglePlus } from 'ionic-native';
 import { RegPet } from '../pages/regPet/regPet';
 import * as firebase from 'firebase';
 
-import { WelcomePage } from '../pages/welcome/welcome';
+import { BasicPage } from '../pages/welcome/pages';
 import { PetFeed } from '../pages/petFeed/petFeed';
 import { Info } from '../pages/info/info';
 import { DonationFeed } from '../pages/donationFeed/donationFeed';

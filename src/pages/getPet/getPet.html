@@ -7,18 +7,36 @@
 <ion-header>
 
   <ion-navbar color="primary">
+<<<<<<< HEAD
     <ion-title>Agenda de cita</ion-title>
     <ion-buttons end>
     <button ion-button (click)="changePage(feed)">
         <ion-icon name="home"></ion-icon>
     </button>
     </ion-buttons>
+=======
+    <ion-title>Reservación</ion-title>
+>>>>>>> 1bd4369ffd194ec171500b24da5fdfd49bb1edb7
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
   <h3 text-center>Agenda una cita con {{pet.name}}</h3>
   <iframe id="bookingCalendar" src="https://mas-amor.appointlet.com/s/adopciones" style="width: 100%; max-width: 100%; height: 550px; border: 0; padding: 0; margin: 0;"></iframe>
  <button ion-button block (click)="changePage(feed)">Regresa a Adopciones</button>
+=======
+    <ion-card>
+      <ion-card-content>
+        <p align="center">
+          Muchas gracias por considerar la adopción! Para completar el proceso es necesario
+          agendar una cita para ser entrevistado.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  <h2 text-center>Fechas Disponibles</h2>
+  <iframe id="bookingCalendar" src="https://mas-amor.appointlet.com/s/adopciones" style="width: 100%; max-width: 100%; height: 600px; border: 0; padding: 0; margin: 0;"></iframe>
+
+>>>>>>> 1bd4369ffd194ec171500b24da5fdfd49bb1edb7
 </ion-content>
