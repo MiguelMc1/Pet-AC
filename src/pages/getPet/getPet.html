@@ -8,8 +8,12 @@
 
   <ion-navbar color="primary">
     <ion-title>Reservación</ion-title>
+    <ion-buttons end>
+    <button ion-button (click)="changePage(feed)">
+        <ion-icon name="home"></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
@@ -23,5 +27,5 @@
     </ion-card>
   <h2 text-center>Fechas Disponibles</h2>
   <iframe id="bookingCalendar" src="https://mas-amor.appointlet.com/s/adopciones" style="width: 100%; max-width: 100%; height: 600px; border: 0; padding: 0; margin: 0;"></iframe>
-
+  <button ion-button block (click)="changePage(feed)">Regresar</button>
 </ion-content>

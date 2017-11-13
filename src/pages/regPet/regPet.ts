@@ -86,4 +86,8 @@ export class RegPet {
     })
   }
 
+  close() {
+    this.viewCtrl.dismiss();
+  }
+
 }
