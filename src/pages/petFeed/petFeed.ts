@@ -25,12 +25,16 @@ export class PetFeed {
   }
 
   pickSpecies(species: string){
-    this.pets = this.angFire.database.list('/pets', {
-      query: {
-        orderByChild: 'species',
-        equalTo: species
-      }
-    });
+    if(species == ''){
+      this.pets = this.angFire.database.list('/pets');
+    }else{
+      this.pets = this.angFire.database.list('/pets', {
+        query: {
+          orderByChild: 'species',
+          equalTo: species
+        }
+      });
+    }
   }
 
   filter(e) {

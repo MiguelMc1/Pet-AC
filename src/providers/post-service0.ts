@@ -24,9 +24,9 @@ export class PostService0 {
       info: info,
     };
 
-    var newPostKey = firebase.database().ref().child('regDonation').push().key;
+    var newPostKey = firebase.database().ref().child('donaciones').push().key;
     var updates = {};
-    updates['/regDonation/' + newPostKey] = postData;
+    updates['/donaciones/' + newPostKey] = postData;
     console.log(newPostKey);
     return firebase.database().ref().update(updates);
   }
